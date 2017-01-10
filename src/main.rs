@@ -11,7 +11,7 @@ fn main() {
                       .unwrap()
                       .bytes()
                       .map(|x| x.unwrap()).collect::<Vec<u8>>(), [0; 30_000]))
-            .fold((), |_, (bytes, mut mem)| { Interpreter::new(&bytes, &mut mem).interpret(); () });
+            .fold((), |_, (bytes, mut mem)| { Interpreter::new(&bytes, &mut mem).interpret(); println!() });
     } else {
         let mut memory = [0; 30_000];
         let bytes = io::stdin().bytes().map(|x| x.unwrap()).collect::<Vec<u8>>();
